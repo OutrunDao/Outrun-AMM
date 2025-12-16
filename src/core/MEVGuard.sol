@@ -72,7 +72,7 @@ contract MEVGuard is IMEVGuard, Ownable {
             // Success probability is 1 / denominator
             uint256 denominator = latestExecutionRequestNum == 0 ? 1 : latestExecutionRequestNum > maxDenominator ? maxDenominator : latestExecutionRequestNum;
             if (randomNum % denominator == 0) {
-                executionDetails[currentBlockNum][pair].isExecuted == true;
+                executionDetails[currentBlockNum][pair].isExecuted = true;
             } else {
                 return false;
             }
